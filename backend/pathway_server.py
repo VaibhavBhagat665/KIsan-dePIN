@@ -70,8 +70,9 @@ embedder = SentenceTransformerTask(model="all-MiniLM-L6-v2")
 
 import litellm
 import os
+from dotenv import load_dotenv
 
-os.environ["GEMINI_API_KEY"] = "AIzaSyCTXno9MPJdfVmO0XlV4FkkvQ7UoH4ydRE"
+load_dotenv()
 
 class RealGeminiLLM(LiteLLMChatModel):
     def __init__(self, **kwargs):

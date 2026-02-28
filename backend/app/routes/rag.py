@@ -14,6 +14,7 @@ router = APIRouter()
 async def ask_agronomic_assistant(query: RAGQuery):
     """
     Ask the AI agronomic assistant a question about crop residue management.
+    (Powered by Pathway VectorStore)
 
     The agent retrieves relevant Indian environmental law documents and
     provides grounded, actionable advice. Supports multilingual queries.

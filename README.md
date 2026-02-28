@@ -58,6 +58,7 @@ hackgreen/
 ```bash
 cd frontend
 npm install
+# Set up your local environment variables in .env before running
 npm run dev
 ```
 

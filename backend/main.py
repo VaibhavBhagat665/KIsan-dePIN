@@ -2,6 +2,11 @@
 # Kisan-DePIN Backend — FastAPI Entry Point
 # ============================================================
 
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 

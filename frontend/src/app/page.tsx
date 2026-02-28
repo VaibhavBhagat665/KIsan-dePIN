@@ -44,7 +44,7 @@ export default function Home() {
           <div className="flex items-center justify-between text-[10px] font-mono">
             {[
               { icon: "📱", label: "CAPTURE", active: true },
-              { icon: "🤖", label: "AI VERIFY", active: !!captureData },
+              { icon: "🤖", label: "AI VERIFY", active: !!captureData }, // Depends on mock analysis
               { icon: "🛰️", label: "SATELLITE", active: false },
               { icon: "🔐", label: "ZK-PROOF", active: false },
               { icon: "🪙", label: "MINT", active: false },
