@@ -73,9 +73,9 @@ Open **http://localhost:3000** on your phone (same WiFi) or use Chrome DevTools 
 
 ---
 
-## 🔮 Full Pipeline (All Phases)
+## 🔮 Full Pipeline 
 
-| Phase | Component | Stack | Status |
+| P | Component | Stack | Status |
 |---|---|---|---|
 | 1 | Mobile Sensor Frontend | Next.js, TailwindCSS, Solana Wallet | ✅ Complete |
 | 2 | AI + Agentic RAG Backend | FastAPI, PyTorch, LangChain | ✅ Complete |
@@ -85,17 +85,4 @@ Open **http://localhost:3000** on your phone (same WiFi) or use Chrome DevTools 
 
 ---
 
-## 🏆 Why This Wins
-
-1. **Zero hardware cost** — 800M+ smartphones in India become D-MRV sensors
-2. **Privacy-preserving** — Farmer identity & location never exposed on-chain
-3. **Trustless verification** — AI ↔ Satellite cross-check eliminates fraud
-4. **Instant scalability** — Adding sensors costs $0 (vs $20K per CAAQMS)
-5. **Carbon credit monetization** — Direct farmer rewards via Solana SPL tokens
-6. **Regulatory compliance** — Agentic RAG for Indian Environmental Law
-
----
-
-## 📜 License
-
-MIT — Built for the future of decentralized agriculture.
+Built for the future of decentralized agriculture.
