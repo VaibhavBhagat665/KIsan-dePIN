@@ -68,19 +68,29 @@ print("[Pathway Pipeline] Initializing Document Store for Indian Environmental L
 # (No OpenAI key needed to run the embedder locally)
 embedder = SentenceTransformerTask(model="all-MiniLM-L6-v2")
 
-# We use LiteLLM to hook up to a local model or mock for the demo
-# To avoid requiring keys for the hackathon demo, we'll setup a simple 
-# mock chat model, or you can supply OPENAI_API_KEY
-class MockLLM(LiteLLMChatModel):
+import litellm
+import os
+
+os.environ["GEMINI_API_KEY"] = "AIzaSyCTXno9MPJdfVmO0XlV4FkkvQ7UoH4ydRE"
+
+class RealGeminiLLM(LiteLLMChatModel):
     def __init__(self, **kwargs):
         super().__init__()
         
     def __call__(self, messages, **kwargs):
-        # Very simple mock response if no actual LLM is configured
-        query = str(messages[-1]["content"]) if messages else ""
-        return f"[Mock LLM Response] Based on the live indexed documents, stubble burning carries penalties under CAQM and NGT rules. You asked: {query}"
-        
-llm = MockLLM() if not os.environ.get("OPENAI_API_KEY") else LiteLLMChatModel()
+        try:
+            # Bypass the wrapper to call Gemini directly using litellm
+            import litellm
+            response = litellm.completion(
+                model="gemini/gemini-1.5-pro",
+                messages=messages,
+                api_key=os.environ["GEMINI_API_KEY"]
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            return f"[Real LLM Error]: {str(e)}"
+
+llm = RealGeminiLLM()
 
 # Create the real-time Document Store
 # It watches the ./docs folder for new/modified environmental laws
