@@ -1,0 +1,12 @@
+[toolchain]
+channel = "1.79.0"
+
+[features]
+resolution = true
+
+[workspace]
+members = ["programs/kisan_depin"]
+
+[profile.release]
+overflow-checks = true
+lto = "fat"
